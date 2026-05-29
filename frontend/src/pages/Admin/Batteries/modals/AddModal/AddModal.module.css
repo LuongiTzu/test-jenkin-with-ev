@@ -1,0 +1,198 @@
+/* ========================== */
+/* 🌙 OVERLAY VÀ MODAL */
+/* ========================== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.55);
+    display: grid;
+    place-items: center;
+    z-index: 50;
+}
+
+.modal {
+    width: min(900px, 94vw);
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================== */
+/* 🌙 HEADER & FOOTER */
+/* ========================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.closeBtn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    color: #111827;
+}
+
+.footer {
+    padding: 12px 16px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* ========================== */
+/* 🌙 BODY VÀ FORM */
+/* ========================== */
+.body {
+    padding: 16px;
+}
+
+.formRow {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.twoCols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+    margin-bottom: 10px;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px 16px;
+    margin-top: 8px;
+}
+
+/* ========================== */
+/* 🌙 INPUTS */
+/* ========================== */
+.formRow input,
+.formRow select {
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.formRow input:focus,
+.formRow select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.inputError {
+    border-color: #dc2626 !important;
+    background: #fef2f2;
+    animation: shake 0.25s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+}
+
+/* ========================== */
+/* 🌙 NOTE & LABEL */
+/* ========================== */
+.note {
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: -2px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #111827;
+}
+
+/* ========================== */
+/* 🌙 BUTTONS */
+/* ========================== */
+.primaryBtn {
+    background: #0f172a;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.primaryBtn:hover:enabled {
+    background: #1e293b;
+}
+
+.primaryBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.secondaryBtn {
+    background: #e5e7eb;
+    color: #111827;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.secondaryBtn:hover {
+    background: #d1d5db;
+}
+
+/* ========================== */
+/* 🌙 TOAST THÔNG BÁO */
+/* ========================== */
+.toast {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #10b981;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    animation: fadeout 1.6s forwards;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+@keyframes fadeout {
+    0% { opacity: 1; transform: translate(-50%, 0); }
+    85% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, 8px); }
+}

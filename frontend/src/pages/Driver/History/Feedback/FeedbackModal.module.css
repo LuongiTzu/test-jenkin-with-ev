@@ -1,0 +1,312 @@
+/* ========= OVERLAY ========= */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-in-out;
+    padding: 20px;
+}
+
+.modalContent {
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========= HEADER ========= */
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid #E5E7EB;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.modalHeader h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.closeButton {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    font-size: 1.25rem;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeButton:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.closeButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ========= BODY ========= */
+.modalBody {
+    padding: 24px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.transactionInfo {
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.transactionInfo h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    color: #1F2937;
+    font-weight: 600;
+}
+
+.transactionInfo p {
+    margin: 0;
+    color: #6B7280;
+    font-size: 0.875rem;
+}
+
+.sectionLabel {
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: #374151;
+    font-size: 1rem;
+}
+
+/* ========= RATING SECTION ========= */
+.ratingSection {
+    margin-bottom: 32px;
+}
+
+.starsContainer {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    justify-content: center;
+}
+
+.starButton {
+    background: none;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 8px;
+    border-radius: 8px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.starButton:hover:not(:disabled) {
+    transform: scale(1.15);
+}
+
+.starButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.ratingText {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6B7280;
+    min-height: 24px;
+}
+
+/* ========= COMMENT SECTION ========= */
+.commentSection {
+    margin-bottom: 8px;
+}
+
+.commentInput {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    resize: vertical;
+    transition: all 0.2s;
+    background: white;
+}
+
+.commentInput:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.commentInput:disabled {
+    background-color: #F9FAFB;
+    color: #6B7280;
+    cursor: not-allowed;
+}
+
+.commentInput::placeholder {
+    color: #9CA3AF;
+}
+
+.charCount {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #6B7280;
+    margin-top: 8px;
+}
+
+/* ========= FOOTER ========= */
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 20px 24px;
+    border-top: 1px solid #E5E7EB;
+    background-color: #F9FAFB;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.primaryButton {
+    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+    color: white;
+}
+
+.primaryButton:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.primaryButton:disabled {
+    background: #9CA3AF;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.secondaryButton {
+    background: white;
+    color: #374151;
+    border: 1px solid #D1D5DB;
+}
+
+.secondaryButton:hover:not(:disabled) {
+    background: #F3F4F6;
+    border-color: #9CA3AF;
+}
+
+.secondaryButton:disabled {
+    background: #F3F4F6;
+    color: #9CA3AF;
+    cursor: not-allowed;
+}
+
+/* ========= SPINNER ========= */
+.spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* ========= ANIMATIONS ========= */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 640px) {
+    .modalOverlay {
+        padding: 10px;
+    }
+
+    .modalContent {
+        max-width: 100%;
+    }
+
+    .modalHeader {
+        padding: 20px;
+    }
+
+    .modalBody {
+        padding: 20px;
+    }
+
+    .modalFooter {
+        padding: 16px 20px;
+    }
+
+    .starsContainer {
+        gap: 8px;
+    }
+
+    .starButton {
+        font-size: 2.5rem;
+    }
+
+    .button {
+        min-width: 100px;
+        padding: 10px 16px;
+    }
+}

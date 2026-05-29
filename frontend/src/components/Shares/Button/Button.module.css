@@ -1,0 +1,89 @@
+.wrapper {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: var(--pn-font-size);
+    line-height: var(--p-line-height);
+    letter-spacing: var(--p-letter-spacing);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: "Roboto", sans-serif;
+    text-rendering: optimizespeed;
+}
+
+.primary {
+    background-color: var(--primary);
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.primary:hover {
+    background-color: var(--second);
+}
+
+.text {
+    background-color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.text:hover {
+    background-color: rgb(241, 241, 241);
+}
+
+.blackoutline {
+    border: 1px solid rgba(0, 0, 0, 0.102);
+}
+
+.outline {
+    border: 1px solid black;
+}
+
+.small {
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.order {
+    color: var(--white);
+    background-color: var(--color-gray-900);
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.change {
+    color: var(--white);
+    background-color: var(--color-gray-900);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.change:hover {
+    color: var(--black);
+    background-color: var(--color-gray-400)
+}
+
+.order:hover {
+    color: var(--black);
+    background-color: var(--color-gray-400)
+}
+
+.white {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.white:hover {
+    color: var(--black);
+    background-color: var(--color-gray-400)
+}
+
+.icon {
+    display: inline;
+    padding: 0px;
+    background-color: var(--white);
+}

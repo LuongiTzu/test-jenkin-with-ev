@@ -1,0 +1,153 @@
+/* Overlay nền mờ */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 23, 42, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Hộp modal */
+.modal {
+    background: #ffffff;
+    border-radius: 14px;
+    width: 480px;
+    max-width: 90%;
+    padding: 20px 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    animation: popIn 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Header */
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalHeader h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #374151;
+}
+
+/* Body */
+.modalBody {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checkboxRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.filterRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.formRow {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.formRow input,
+.formRow select {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.inputError {
+    color: #dc2626;
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+/* Footer */
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 10px;
+}
+
+/* Buttons */
+.primaryBtn {
+    background: #0f172a;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.secondaryBtn {
+    background: #e5e7eb;
+    color: #111827;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.ghostBtn {
+    background: transparent;
+    color: #0f172a;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Hiệu ứng */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

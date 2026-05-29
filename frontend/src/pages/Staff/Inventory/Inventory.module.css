@@ -1,0 +1,813 @@
+/*
+!* ===== PAGE ===== *!
+.inventoryPage {
+  padding: 20px;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+}
+
+!* ===== HEADER ===== *!
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  margin-bottom: 12px;
+}
+.headerRow h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+.headerButtons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.filterBtn {
+  background: #fff;
+  border: 1px solid #e6e6ea;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.primaryBtn {
+  background: #0f172a;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 500;
+  justify-content: center;
+}
+.primaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.secondaryBtn {
+  background: #e5e7eb;
+  color: #111827;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.ghostBtn {
+  background: #fff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+!* ===== GRID ===== *!
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+  margin-top: 14px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e8e8ec;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title {
+  font-weight: 700;
+  font-size: 16px;
+}
+.type {
+  color: #6b7280;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+!* STATUS *!
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.statusText {
+  background: rgba(0, 0, 0, .04);
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+!* METRICS *!
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 18px;
+}
+.metricLabel {
+  color: #6b7280;
+  font-size: 12px;
+}
+.metricValue {
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+!* PROGRESS *!
+.progressWrap {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.progressTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.batteryLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+.batteryIcon {
+  font-size: 18px;
+}
+.levelNote {
+  color: #6b7280;
+  font-size: 13px;
+}
+.progressBar {
+  height: 12px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.progressFill {
+  height: 100%;
+  background: #111827;
+  width: 20%;
+  transition:
+    width .4s ease,
+    background .2s ease;
+  border-radius: 8px;
+}
+
+!* ACTIONS *!
+.cardActions {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+.action {
+  flex: 1;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e7e7ea;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background .2s;
+}
+.action:hover {
+  background: #f9fafb;
+}
+
+.emptyState {
+  padding: 30px;
+  text-align: center;
+  color: #9ca3af;
+  font-style: italic;
+  grid-column: 1 / -1;
+}
+
+!* ===== MODAL ===== *!
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal {
+  background: #fff;
+  border-radius: 10px;
+  width: 800px;
+  max-width: 96%;
+  max-height: 92vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+}
+.large {
+  width: 980px;
+}
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+.iconBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #4b5563;
+}
+.modalBody {
+  padding: 16px 22px;
+  overflow-y: auto;
+}
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 12px 20px;
+  border-top: 1px solid #e5e7eb;
+  background: #fafafa;
+}
+.subtleLead {
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+!* ===== FORM ===== *!
+.formRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.formRow label {
+  font-weight: 500;
+  font-size: 14px;
+}
+.formRow input,
+.formRow select,
+.modalBody textarea {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.modalBody textarea {
+  min-height: 140px;
+  resize: vertical;
+  margin-top: 6px;
+}
+
+!* 2 CỘT CHUẨN – mỗi cột là .formRow *!
+.twoColsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+  margin-bottom: 12px;
+}
+
+!* Lưới thông số *!
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+  margin-bottom: 12px;
+}
+
+!* Datetime input spacing để chữ không dính *!
+.datetimeInput {
+  padding-right: 36px;
+}
+
+!* CHECKLIST *!
+.checklistGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.checklistGrid label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #111827;
+  cursor: pointer;
+}
+.checkboxRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+!* INPUT NOTES / ERRORS *!
+.inputError {
+  color: #b91c1c;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.formErrors {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-top: 12px;
+}
+.formErrors ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.modelInput {
+  padding: 8px 10px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition:
+    border .2s,
+    box-shadow .2s;
+}
+
+!* SETTINGS *!
+.settingsActions {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+.settingsCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .04);
+}
+.settingsCard h4 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.settingsCard p {
+  font-size: 14px;
+  color: #374151;
+  flex-grow: 1;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.settingsRow {
+  display: flex;
+  align-items: stretch;
+}
+.settingsRow button {
+  flex: 1;
+  height: 40px;
+}
+*/
+/* ===== PAGE ===== */
+.inventoryPage {
+    padding: 20px;
+    font-family:
+            "Inter",
+            system-ui,
+            -apple-system,
+            "Segoe UI",
+            Roboto,
+            "Helvetica Neue",
+            Arial;
+}
+
+/* ===== HEADER ===== */
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    margin-bottom: 12px;
+}
+.headerRow h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+.headerButtons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.filterBtn {
+    background: #fff;
+    border: 1px solid #e6e6ea;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+.primaryBtn {
+    background: #0f172a;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    font-weight: 500;
+    justify-content: center;
+}
+.primaryBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.secondaryBtn {
+    background: #e5e7eb;
+    color: #111827;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.ghostBtn {
+    background: #fff;
+    color: #111827;
+    border: 1px solid #e5e7eb;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* ===== GRID ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 18px;
+    margin-top: 14px;
+}
+.card {
+    background: #fff;
+    border: 1px solid #e8e8ec;
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 52px;
+}
+.title {
+    font-weight: 700;
+    font-size: 16px;
+}
+.type {
+    color: #6b7280;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+/* STATUS */
+.statusBadge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.statusDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.statusText {
+    background: rgba(0, 0, 0, 0.04);
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+/* ==== METRICS (2 hàng: sức khỏe - dung lượng / ngày nhập - bảo dưỡng) ==== */
+.metrics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.datesRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.metricLabel {
+    color: #6b7280;
+    font-size: 12px;
+}
+.metricValue {
+    font-weight: 600;
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+/* PROGRESS */
+.progressBar {
+    height: 10px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.progressFill {
+    height: 100%;
+    background: #111827;
+    transition:
+            width 0.4s ease,
+            background 0.2s ease;
+    border-radius: 8px;
+}
+
+/* ACTIONS */
+.cardActions {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+.action {
+    flex: 1;
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e7e7ea;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+.action:hover {
+    background: #f9fafb;
+}
+
+.emptyState {
+    padding: 30px;
+    text-align: center;
+    color: #9ca3af;
+    font-style: italic;
+    grid-column: 1 / -1;
+}
+
+/* ===== MODAL ===== */
+.modalBackdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal {
+    background: #fff;
+    border-radius: 10px;
+    width: 800px;
+    max-width: 96%;
+    max-height: 92vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.large {
+    width: 980px;
+}
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+.iconBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #4b5563;
+}
+.modalBody {
+    padding: 16px 22px;
+    overflow-y: auto;
+}
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 12px 20px;
+    border-top: 1px solid #e5e7eb;
+    background: #fafafa;
+}
+.subtleLead {
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+/* ===== FORM ===== */
+.formRow {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+.formRow label {
+    font-weight: 500;
+    font-size: 14px;
+}
+.formRow input,
+.formRow select,
+.modalBody textarea {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.modalBody textarea {
+    min-height: 140px;
+    resize: vertical;
+    margin-top: 6px;
+}
+
+/* 2 CỘT CHUẨN – mỗi cột là .formRow */
+.twoColsRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 16px;
+    margin-bottom: 12px;
+}
+
+/* Lưới thông số */
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+    margin-bottom: 12px;
+}
+
+/* Datetime input spacing để chữ không dính */
+.datetimeInput {
+    padding-right: 36px;
+}
+
+/* CHECKLIST */
+.checklistGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.checklistGrid label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: #111827;
+    cursor: pointer;
+}
+.checkboxRow {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* INPUT NOTES / ERRORS */
+.inputError {
+    color: #b91c1c;
+    font-size: 12px;
+    margin-top: 4px;
+}
+.formErrors {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-top: 12px;
+}
+.formErrors ul {
+    margin: 6px 0 0;
+    padding-left: 18px;
+}
+
+.modelInput {
+    padding: 8px 10px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    transition:
+            border 0.2s,
+            box-shadow 0.2s;
+}
+
+/* SETTINGS */
+.settingsActions {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+}
+.settingsCard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+.settingsCard h4 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.settingsCard p {
+    font-size: 14px;
+    color: #374151;
+    flex-grow: 1;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+.settingsRow {
+    display: flex;
+    align-items: stretch;
+}
+.settingsRow button {
+    flex: 1;
+    height: 40px;
+}

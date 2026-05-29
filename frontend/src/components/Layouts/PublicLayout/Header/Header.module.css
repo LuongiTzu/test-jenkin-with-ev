@@ -1,0 +1,53 @@
+.wrapper {
+  display: flex;
+  height: var(--height-header, 64px);
+  align-items: center;
+  justify-content: space-between;
+  width: var(--default-layout-width, 1216px);
+  margin: 0 10px;
+}
+
+.brand a{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.brand a .logo img {
+  height: 50px;
+  width: 50px;
+}
+.brand  a span{
+    color: var(--black);
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+    letter-spacing: var(--h3-letter-spacing);
+    
+}
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+.navbar a {
+  color: var(--color-gray-600);
+  font-size: var(--pn-font-size);
+  letter-spacing: var(--p-letter-spacing);
+  line-height: var(--height-header, 64px);
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+.navbar a:hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+@media(max-width:1025px){
+    .navbar{
+        display: none;
+    }
+}

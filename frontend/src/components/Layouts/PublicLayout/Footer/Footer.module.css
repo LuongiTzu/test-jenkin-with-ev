@@ -1,0 +1,91 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-gray-900);
+  padding: 64px 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: var(--default-layout-width, 1216px);
+  margin: 0 10px;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.content .item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.content .item h4 {
+  color: var(--white);
+  font-size: var(--h4-font-size);
+  line-height: var(--h4-line-height);
+  letter-spacing: var(--h4-letter-spacing);
+}
+.content .item .introduce,
+.content .item span,
+.content .item a {
+  color: var(--color-gray-600);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  letter-spacing: var(--p-letter-spacing);
+}
+.brand a {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.brand a .logo img {
+  height: 50px;
+  width: 50px;
+}
+.brand a .nameBrand {
+  color: var(--white);
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-height);
+  letter-spacing: var(--h3-letter-spacing);
+}
+.socialItem {
+  display: flex;
+  gap: 2px;
+}
+.iconFb,
+.iconIng {
+  width: 25px;
+  height: 25px;
+}
+.faBuilding,
+.faPhoneVolume {
+  color: var(--color-gray-600);
+}
+.reserved {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 32px;
+  margin-top: 48px;
+  border-top: 0.5px solid rgb(52, 52, 52);
+}
+.reserved a {
+  color: var(--color-gray-600);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  letter-spacing: var(--p-letter-spacing);
+}
+@media (max-width: 1025px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

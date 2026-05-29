@@ -1,0 +1,238 @@
+.wrapper {
+    --a: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--a);
+    letter-spacing: var(--p-letter-spacing);
+}
+
+.orderplace {
+    display: flex;
+    flex-direction: column;
+    border: var(--border);
+    border-radius: 12px;
+    padding: var(--a);
+    gap: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header h1 {
+    color: var(--black);
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-line-height);
+    letter-spacing: var(--p-letter-spacing);
+    font-weight: 500;
+}
+
+.header p {
+    color: var(--color-gray-600);
+    font-size: var(--p-font-size);
+    line-height: var(--p-line-height);
+    letter-spacing: var(--p-letter-spacing);
+
+}
+
+
+/* Danh sách đơn hàng */
+.orderList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Card ngang */
+.orderItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 18px;
+    transition: all 0.25s ease;
+}
+
+.orderItem:hover {
+    background-color: #fff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+/* -------- CỘT TRÁI -------- */
+.orderItem .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 4px;
+}
+
+.orderItem .status {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.orderItem .status.pending {
+    background-color: #fef9c3;
+    color: #b45309;
+}
+
+.orderItem h3 {
+    font-size: 0.95rem;
+    /* bình thường lại */
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.3;
+}
+
+.orderItem .time {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* -------- CỘT PHẢI -------- */
+.orderRight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.orderid {
+    background-color: #eef2ff;
+    border-radius: 10px;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.faMapLocationDot {
+    color: #6d28d9;
+    font-size: 20px;
+}
+
+.orderid p {
+    font-size: 0.85rem;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+/* -------- NÚT "Đường đi" -------- */
+.orderItem a {
+    background-color: #111827;
+    color: white;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.orderItem a:hover {
+    background-color: #374151;
+}
+
+
+/* .statusregister */
+
+.statusregister {
+    display: flex;
+    flex-direction: column;
+    border: var(--border);
+    border-radius: 10px;
+    padding: var(--a);
+    gap: 16px;
+}
+
+.statusregister .packagename,
+.change,
+.nextorder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.statusregister .packagename {
+    margin-bottom: 16px;
+}
+
+.statusregister .packagename p {
+    color: var(--white);
+    font-size: 12px;
+    line-height: var(--caption-line-height);
+    background-color: black;
+    border: var(--border);
+    border-radius: 8px;
+    padding: 2px 8px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.statusregister .packagename h1 {
+    color: var(--black);
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-line-height);
+    letter-spacing: var(--p-letter-spacing);
+    font-weight: 500;
+}
+
+.statusregister .change {
+    margin-bottom: 5px;
+}
+
+.statusregister .change,
+.nextorder p {
+    font-size: 0.875rem;
+    line-height: var(--caption-line-height);
+    letter-spacing: var(--p-letter-spacing);
+}
+
+.statusregister .button {
+    font-size: 0.875rem;
+}
+
+/* thanh để số lượng pin */
+.statusregister .progresscontainer {
+    width: 100%;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.statusregister .progresscontainer .progressbar {
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+}
+
+.cancelButton {
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cancelButton:hover {
+    background-color: #d9363e;
+}

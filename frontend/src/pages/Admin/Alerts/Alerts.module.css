@@ -1,0 +1,181 @@
+/* ========== Tổng layout ========== */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 20px;
+  animation: fadeIn 0.45s ease-in-out;
+}
+
+/* ========== KPI Section ========== */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.kpiCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px 24px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.kpiCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+.kpiTitle {
+  font-size: 14px;
+  color: #64748b;
+}
+.kpiValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin: 6px 0;
+}
+.kpiSub {
+  font-size: 13px;
+  color: #16a34a;
+  font-weight: 500;
+}
+.kpiIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 20px;
+}
+
+/* ========== Header ========== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+}
+.markAll,
+.settings {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.markAll:hover,
+.settings:hover {
+  background: #f3f4f6;
+}
+.settings svg {
+  margin-right: 6px;
+}
+
+/* ========== Alert List ========== */
+.alertList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.alertCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 22px;
+  border-left: 6px solid transparent;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+}
+.alertCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ========== Type Colors ========== */
+.critical {
+  border-left-color: #ef4444;
+}
+.warning {
+  border-left-color: #f59e0b;
+}
+.info {
+  border-left-color: #3b82f6;
+}
+
+/* ========== Nội dung cảnh báo ========== */
+.alertMain {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.alertIcon {
+  font-size: 20px;
+}
+.criticalIcon {
+  color: #dc2626;
+}
+.warningIcon {
+  color: #eab308;
+}
+.infoIcon {
+  color: #2563eb;
+}
+.alertTitle {
+  font-weight: 600;
+  color: #111827;
+}
+.alertMeta {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ========== Nút thao tác ========== */
+.alertActions {
+  display: flex;
+  gap: 8px;
+}
+.viewBtn,
+.dismissBtn {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.viewBtn:hover,
+.dismissBtn:hover {
+  background: #f9fafb;
+}
+
+/* ========== Animation ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

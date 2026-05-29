@@ -1,0 +1,196 @@
+/* === Overlay nền mờ === */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* === Modal chính === */
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* === Header === */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+/* === Thông tin khách hàng === */
+.customerCard {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 16px;
+  font-size: 14px;
+}
+
+/* === Pin đi / Pin đến === */
+.pinGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0 20px;
+}
+
+.pinCard {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: #fafafa;
+}
+
+.pinCard h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.pinOut h4 {
+  color: #dc2626;
+  /* đỏ nhạt */
+}
+
+.pinIn h4 {
+  color: #16a34a;
+  /* xanh nhạt */
+}
+
+/* === Checklist ngang === */
+.checklistRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f4f6;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin: 18px 0;
+}
+
+.checklistRow label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+/* === Thanh toán === */
+.paymentBox {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: #f9fafb;
+  margin-bottom: 20px;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.paymentBtns {
+  display: flex;
+  gap: 12px;
+}
+
+.payBtn {
+  flex: 1;
+  background: #e5e7eb;
+  color: #111827;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.payBtn:hover {
+  background: #d1d5db;
+}
+
+.payBtn.active {
+  background: #111827;
+  color: white;
+}
+
+/* === Footer === */
+.footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancelBtn,
+.primaryBtn {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancelBtn {
+  background: #e5e7eb;
+}
+
+.primaryBtn {
+  background: #2563eb;
+  color: white;
+}
+
+
+.select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+.note {
+  font-size: 0.95rem;
+  color: #6b7280;
+  /* xám nhẹ */
+  margin-top: -4px;
+  margin-bottom: 8px;
+  font-style: italic;
+}

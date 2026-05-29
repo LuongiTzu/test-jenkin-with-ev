@@ -1,0 +1,179 @@
+.container {
+  padding: 0 24px 32px 24px;
+}
+
+/* Đẩy StatsHeader xuống thấp hơn so với đường gạch đầu trang */
+.headerWrap {
+  margin-top: 22px; /* chỉnh tại đây nếu muốn thấp/cao hơn */
+}
+
+.card {
+  margin-top: 24px;
+  padding: 14px 14px 20px 14px;
+
+  /* Viền đậm hơn, dễ phân biệt */
+  border: 1px solid #d7dbe3;     /* trước là #e9edf3 (nhạt) */
+  background: #fff;
+  border-radius: 14px;
+
+  /* đổ bóng rõ hơn nhưng vẫn nhẹ */
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
+}
+
+.cardHeader {
+  padding: 8px 12px 4px 12px;
+}
+
+.cardHeader h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 25px;
+  color: #1f2937;
+}
+
+.subTitle {
+  margin: 4px 0 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+/* ITEM */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+
+  border: 1px solid #e2e6ee;   /* viền item cũng đậm hơn chút */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 0 rgba(16, 24, 40, 0.02);
+}
+
+.left {
+  width: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.time {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #111827;
+}
+
+.badge {
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.badgePrimary {
+  background: #eef2ff;
+  color: #4338ca;
+  border-color: #e0e7ff;
+}
+
+.badgeInfo {
+  background: #ecfeff;
+  color: #0891b2;
+  border-color: #cffafe;
+}
+
+.badgeQR {
+  background: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.badgeNeutral {
+  background: #f3f4f6;
+  color: #374151;
+  border-color: #e5e7eb;
+}
+
+.middle {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.vehicle {
+  margin-top: 2px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.meta {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.muted {
+  color: #9ca3af;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.amount {
+  font-weight: 700;
+  color: #111827;
+}
+
+.iconBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.iconBtn:hover {
+  background: #f9fafb;
+}
+
+/* HISTORY */
+.historyCard {
+  margin-top: 40px;
+}
+
+.dateLabel {
+  font-weight: 600;
+  font-size: 15px;
+  color: #374151;
+  margin-top: 16px;
+  margin-left: 12px;
+  margin-bottom: 6px;
+}
+
+.historyGroup {
+  margin-top: 12px;
+  border-top: 1px dashed #dfe3ea; /* đậm hơn nhẹ */
+  padding-top: 8px;
+}

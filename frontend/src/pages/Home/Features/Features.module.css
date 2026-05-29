@@ -1,0 +1,131 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  background-color: var(--white);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 64px;
+  width: var(--default-layout-width, 1216px);
+  position: relative;
+  margin: 0 10px;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.header span {
+  color: var(--color-gray-900);
+  font-size: var(--h1-font-size);
+  line-height: var(--h1-line-height);
+  letter-spacing: var(--h1-letter-spacing);
+}
+.header p {
+  color: var(--color-gray-600);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  letter-spacing: var(--p-letter-spacing);
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 24px;
+  gap: 20px;
+  border: var(--border);
+  border-radius: 10px;
+}
+.card span {
+  color: var(--color-gray-900);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  letter-spacing: var(--p-letter-spacing);
+  font-weight: 500;
+}
+.card p {
+  color: var(--color-gray-600);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  letter-spacing: var(--p-letter-spacing);
+  text-align: center;
+}
+.faBoltLightning,
+.faBatteryFull,
+.faLocationDot,
+.faUserShield {
+  width: 30px;
+  height: 30px;
+}
+.faBoltLightning {
+  color: rgb(228, 222, 50);
+}
+.faBatteryFull {
+  color: rgb(0, 196, 131);
+}
+.faLocationDot {
+  color: rgb(200, 0, 0);
+}
+.faUserShield {
+  color: rgb(0, 122, 198);
+}
+.animationvinfastLuxSa {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 15%;
+  left: -10%;
+  z-index: 9999;
+  animation: float 7s 1s ease-in-out infinite;
+}
+
+/* reponsive */
+@media (max-width: 1420px) {
+  .animationvinfastLuxSa  {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .content {
+
+  grid-template-columns: 1fr;
+
+}
+}
+/* animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

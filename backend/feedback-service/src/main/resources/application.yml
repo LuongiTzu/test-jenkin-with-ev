@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: feedback-service
+  datasource:
+    url: jdbc:mysql://mysql_feedback:3306/feedback_service?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8086

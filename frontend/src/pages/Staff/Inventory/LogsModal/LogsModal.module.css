@@ -1,0 +1,97 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.55);
+    display: grid;
+    place-items: center;
+    z-index: 60;
+}
+
+.modal {
+    width: min(800px, 94vw);
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.closeBtn {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    color: #111827;
+}
+
+.body {
+    padding: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.body h4 {
+    margin-top: 10px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #111827;
+}
+
+.logList {
+    padding-left: 18px;
+    margin-bottom: 12px;
+}
+
+.logList li {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #1f2937;
+}
+
+.footer {
+    padding: 12px 16px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.secondaryBtn {
+    background: #e5e7eb;
+    color: #111827;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.secondaryBtn:hover {
+    background: #d1d5db;
+}

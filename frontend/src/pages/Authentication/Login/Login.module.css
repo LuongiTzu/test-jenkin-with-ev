@@ -1,0 +1,129 @@
+.wrapper {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 550px 1fr;
+  background-color: var(--white);
+}
+.form {
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px;
+  border-radius: 10px;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom:20px;
+}
+.header span {
+  color: var(--color-gray-900);
+  font-size: var(--h3-font-size);
+  line-height: var(--h3-line-hight);
+  letter-spacing: var(--h3-letter-spacing);
+  font-weight: 500;
+}
+.header p {
+  color: var(--color-gray-600);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-hight);
+  letter-spacing: var(--p-letter-spacing);
+  font-weight: 400;
+}
+.inputForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+.inputInfo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.inputInfo span {
+  color: var(--color-gray-900);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-hight);
+  letter-spacing: var(--p-letter-spacing);
+  font-weight: 400;
+}
+.inputInfo input {
+  color: var(--color-gray-900);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-hight);
+  letter-spacing: var(--p-letter-spacing);
+  font-weight: 400;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgb(206, 206, 206);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+.inputInfo input:focus {
+  border: 1px solid var(--color-gray-400);
+  box-shadow: 2px 2px 2px rgb(239, 239, 239);
+}
+
+.transferRegistration {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.transferRegistration span {
+  color: var(--color-gray-900);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-hight);
+  letter-spacing: var(--p-letter-spacing);
+  font-weight: 400;
+}
+.transferRegistration span a {
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+.transferRegistration span a:hover {
+  color: rgb(250, 86, 86);
+}
+
+.divider span {
+  color: var(--color-gray-600);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-hight);
+  letter-spacing: var(--p-letter-spacing);
+  font-weight: 400;
+}
+.imagesLogin {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.longinVin {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+.submitBtn{
+   padding: 8px 10px;
+  background-color: var(--primary);
+  border-radius: 8px;
+  color: var(--white);
+  font-size: var(--p-font-size);
+  line-height: var(--p-line-height);
+  letter-spacing: var(--p-letter-spacing);
+  font-weight: 500;
+}

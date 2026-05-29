@@ -1,0 +1,248 @@
+.wrapper {
+    --a: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--a);
+    letter-spacing: var(--p-letter-spacing);
+}
+
+.nearstation {
+    display: flex;
+    flex-direction: column;
+    border: var(--border);
+    border-radius: 10px;
+    padding: var(--a);
+    gap: var(--a);
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header h1 {
+    color: var(--black);
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-line-height);
+    letter-spacing: var(--p-letter-spacing);
+    font-weight: 500;
+}
+
+.header p {
+    color: var(--color-gray-600);
+    font-size: var(--p-font-size);
+    line-height: var(--p-line-height);
+    letter-spacing: var(--p-letter-spacing);
+
+}
+
+.map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--color-gray-alpha);
+    border-radius: 10px;
+    height: 350px;
+}
+
+.faLocationDot {
+    color: #00766c;
+    width: 30px;
+    height: 30px;
+}
+
+.faBatteryEmpty {
+    color: green;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.faClock {
+    color: blue;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.faLocation {
+    color: purple;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.faStar {
+    color: red;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+@media(max-width:760px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* already */
+.alreadystation {
+    display: flex;
+    flex-direction: column;
+    border: var(--border);
+    border-radius: 10px;
+    padding: var(--a);
+    gap: var(--a);
+
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+
+.alreadystation .header h1 {
+    color: var(--black);
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-line-height);
+    letter-spacing: var(--p-letter-spacing);
+    font-weight: 300;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.filter .input {
+    background-color: #F3F3F5;
+    display: flex;
+    align-items: center;
+    border: var(--border);
+    border-radius: 10px;
+    width: 100%;
+    gap: 2px;
+}
+
+.filter .input input {
+    padding: 4px 0px;
+    background-color: #F3F3F5;
+    width: 100%;
+}
+
+.faMagnifyingGlass {
+    padding: 10px;
+    color: #00766c;
+    width: 16px;
+    height: 16px;
+}
+
+.station {
+    display: flex;
+    flex-direction: column;
+    border: var(--border);
+    border-radius: 10px;
+    padding: var(--a);
+}
+
+.local {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--a);
+}
+
+
+
+.station .address {
+    color: var(--color-gray-600);
+    font-size: 0.875rem;
+    line-height: var(--caption-line-height);
+    letter-spacing: var(--p-letter-spacing);
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+.state {
+    color: var(--white);
+    font-size: 12px;
+    line-height: var(--caption-line-height);
+    letter-spacing: var(--p-letter-spacing);
+    background-color: black;
+    border: var(--border);
+    border-radius: 8px;
+    padding: 2px 8px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* Trạng thái hoạt động */
+.open {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+/* Trạng thái bảo trì */
+.maintenance {
+    background-color: #dc2626;
+    color: #fff;
+}
+
+/* Trạng thái ngoại tuyến */
+.offline {
+    background-color: var(--color-gray-100);
+    color: #000;
+}
+
+
+
+.station .information {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.station .information .iconinfo p {
+    font-size: 0.875rem;
+    line-height: var(--caption-line-height);
+    letter-spacing: var(--p-letter-spacing);
+}
+
+.station .price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.station .information .iconinfo {
+    display: flex;
+    flex-direction: row;
+}
+
+.disabledButton {
+    opacity: 0.5;
+    background-color: #cccccc !important;
+    color: #666 !important;
+    cursor: not-allowed !important;
+    border: 1px solid #bfbfbf !important;
+    pointer-events: none;
+    /* Không cho click */
+}
+
+/* ==== POPUP tuyến đường phụ ==== */
+.alt-popup-box {
+    background: white;
+    padding: 4px 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 11px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
